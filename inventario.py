@@ -1,3 +1,5 @@
+# importar las funciones desde archivo funciones.py
+from funciones import mostrar_menu
 # Creamos la variable inventario que es igual a una lista vacia donde mas adelante se almacenaran datos 
 inventario = []
 #se crea la variable opcion que equivalente a 0 para que guarde la variable 
@@ -6,14 +8,9 @@ option = 0
 #El while me permite crear un ciclo que se ejecuta si la variable opcion es diferente a 4 (salir)
 
 while option != 4:
+# Imprimir en la pantalla del usuario el menú    
+    mostrar_menu()
 
-# Dentro del ciclo se muestra un menu a través de la funcion print 
-
-    print("MENÚ DE INVENTARIO")
-    print("1 AGREGAR PRODUCTO")
-    print("2 MOSTRAR INVENTARIO")
-    print("3 CALCULAR ESTADISTICAS")
-    print("4 SALIR DEL SISTEMA")
 # El usuario inserta la opcion que desee, para ello opcion es igual a numeros enteros el input que permite pedir el entero al usuario
     option = int(input("INGRESE UNA OPCIÓN: "))
 # Si la opcion es igual a 1 se pide el nombre, precio y cantidad
