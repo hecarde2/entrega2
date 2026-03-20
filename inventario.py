@@ -1,8 +1,5 @@
 # importar las funciones desde archivo funciones.py
-from funciones import mostrar_menu
-from funciones import agregar_producto
-from funciones import mostrar_inventario
-from funciones import calcular_estadisticas
+from funciones import *
 # Creamos la variable inventario que es igual a una lista vacia donde mas adelante se almacenaran datos 
 inventario = []
 #se crea la variable opcion que equivalente a 0 que se usara mas adelante
