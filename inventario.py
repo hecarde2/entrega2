@@ -31,10 +31,11 @@ while option != 4:
         print("PRODUCTO AGREGADO CON EXITO.")
 # Entonces si se selecciona la opcion 2, si se reccorre inventario y es 0 no hay productos
     # muestra si no hay productos
+    # Pero si recorre inventario y si hay productos, le muestra al usuario los productos
     elif option == 2:
         if len(inventario) == 0:
             print("NO HAY PRODUCTOS.")
-# Pero si recorre inventario y si hay productos, le muestra al usuario los productos
+
         else:
             print("INVENTARIO")
             for producto in inventario:
