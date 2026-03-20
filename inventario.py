@@ -1,5 +1,7 @@
 # importar las funciones desde archivo funciones.py
 from funciones import mostrar_menu
+from funciones import agregar_producto
+from funciones import mostrar_inventario
 # Creamos la variable inventario que es igual a una lista vacia donde mas adelante se almacenaran datos 
 inventario = []
 #se crea la variable opcion que equivalente a 0 para que guarde la variable 
@@ -14,32 +16,19 @@ while option != 4:
 # El usuario inserta la opcion que desee, para ello opcion es igual a numeros enteros el input que permite pedir el entero al usuario
     option = int(input("INGRESE UNA OPCIÓN: "))
 # Si la opcion es igual a 1 se pide el nombre, precio y cantidad
-    if option == 1:
-        nombre = input("Nombre del producto: ")
-        precio = float(input("Precio: "))
-        cantidad = int(input("Cantidad: "))
+# se crea la varibale producto que esta en documento de funciones y en ella se almacena un diccionario donde guardaremos el nombre del producto, el precio y la cantidad
 # se crea la varibale producto y en ella se almacena un diccionario donde guardaremos el nombre del producto, el precio y la cantidad
-        producto = {
-            "nombre": nombre,
-            "precio": precio,
-            "cantidad": cantidad
-        }
 # Se agrega a lista ubicada en el principio en la variable inventario,  lo funcion que tiene es almacenar información del diccionario
 # de la variable producto en la lista de la variable inventario y el print le muestra al usuario que esta fue añadida con exito. 
     
-        inventario.append(producto)
-        print("PRODUCTO AGREGADO CON EXITO.")
+    if option == 1:
+       agregar_producto(inventario)
+
 # Entonces si se selecciona la opcion 2, si se reccorre inventario y es 0 no hay productos
     # muestra si no hay productos
     # Pero si recorre inventario y si hay productos, le muestra al usuario los productos
     elif option == 2:
-        if len(inventario) == 0:
-            print("NO HAY PRODUCTOS.")
-
-        else:
-            print("INVENTARIO")
-            for producto in inventario:
-                print(producto)
+        mostrar_inventario(inventario)
 # se crea la option 3 con dos variables total de unidades y valor total donde a futuro serán usadas, son variables acomuladora donde se harán las operaciones
     # para ver el inventario
     elif option == 3:
