@@ -10,6 +10,10 @@ def agregar_producto(inventario):
         nombre = input("Nombre del producto: ")
         precio = float(input("Precio: "))
         cantidad = int(input("Cantidad: "))
+        if precio < 0:
+              print("Numero invalido")
+        if cantidad < 0:
+              print("Numero invalido")
 
         producto = {
             "nombre": nombre,
