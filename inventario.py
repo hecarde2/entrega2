@@ -2,15 +2,16 @@
 from funciones import mostrar_menu
 from funciones import agregar_producto
 from funciones import mostrar_inventario
+from funciones import calcular_estadisticas
 # Creamos la variable inventario que es igual a una lista vacia donde mas adelante se almacenaran datos 
 inventario = []
-#se crea la variable opcion que equivalente a 0 para que guarde la variable 
+#se crea la variable opcion que equivalente a 0 que se usara mas adelante
 option = 0
 
 #El while me permite crear un ciclo que se ejecuta si la variable opcion es diferente a 4 (salir)
 
 while option != 4:
-# Imprimir en la pantalla del usuario el menú    
+# Imprimir en la pantalla del usuario el menú, el menú ya esta en funciones 
     mostrar_menu()
 
 # El usuario inserta la opcion que desee, para ello opcion es igual a numeros enteros el input que permite pedir el entero al usuario
@@ -32,20 +33,8 @@ while option != 4:
 # se crea la option 3 con dos variables total de unidades y valor total donde a futuro serán usadas, son variables acomuladora donde se harán las operaciones
     # para ver el inventario
     elif option == 3:
-        total_unidades = 0
-        valor_total = 0
-
-# Se recorre el diccionario dentro de la variable productos, que habia sido guardado en la lista de la variable inventario
-# a la variable total_unidades sumale el valor que esta dentro del diccionario productos especificamente [cantidad]
-# Lo que hara es sumar todas las cantidades ubicadas en el diccionario de producto y guardarlo en la variable total_unidades        
-        for producto in inventario:
-            total_unidades += producto["cantidad"]
-# Lo que hara es sumar todas las cantidades ubicadas en el diccionario de producto en este caso producto ["precio"] y 
-# mutiplicarlo por producto en este caso el valor["cantidad"]  y guardarlo en la variable valor_total
-            valor_total += producto["precio"] * producto["cantidad"]
-#posteriormente le muestra al cliente el total de unidades en general y el valor total del inventario 
-        print("Total de unidades:", total_unidades)
-        print("Valor total del inventario: $", valor_total)
+        calcular_estadisticas(inventario)
+       
 # Si el usuario selecciona la opción 4,
 # significa que desea finalizar la ejecución del programa
 # Se muestra un mensaje de despedida.
@@ -62,3 +51,6 @@ while option != 4:
 
     else:
         print("VUELVE A INTENTAR")
+
+# El objetivo de la semana: Importar desde otro archivo PY funciones para un codigo limpio, presentar un menú al usuario.
+# A nivel de desarrollador el llamar variables en funciones.
