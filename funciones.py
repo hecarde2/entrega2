@@ -36,12 +36,12 @@ def mostrar_inventario(inventario):
 
 
 def  calcular_estadisticas(inventario):
-        total_unidades = 0
+        total_productos_registrados = 0
         valor_total = 0        
         for producto in inventario:
-            total_unidades += producto["cantidad"]
+            total_productos_registrados = len(inventario)
 
             valor_total += producto["precio"] * producto["cantidad"]
 
-        print("Total de unidades:", total_unidades)
+        print("Total de productor:", total_productos_registrados)
         print("Valor total del inventario: $", valor_total)
